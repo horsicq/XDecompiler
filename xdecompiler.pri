@@ -7,3 +7,6 @@ HEADERS += \
 SOURCES += \
     $$PWD/xdecompiler.cpp
 
+DISTFILES += \
+    $$PWD/xdecompiler.cmake
+
