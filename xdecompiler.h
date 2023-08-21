@@ -21,7 +21,7 @@
 #ifndef XDECOMPILER_H
 #define XDECOMPILER_H
 
-#include <QObject>
+#include "xinfodb.h"
 
 class XDecompiler : public QObject
 {
