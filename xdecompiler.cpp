@@ -1,4 +1,4 @@
-/* Copyright (c) 2023-2025 hors<horsicq@gmail.com>
+/* Copyright (c) 2025 hors<horsicq@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,4 +24,17 @@ XDecompiler::XDecompiler(QObject *pParent)
     : QObject(pParent)
 {
 
+}
+
+void XDecompiler::setData(XInfoDB *pXInfoDB, QString sProfile)
+{
+    g_pXInfoDB = pXInfoDB;
+    g_sProfile = sProfile;
+}
+
+QString XDecompiler::decompileFunction(XADDR nAddress)
+{
+    Q_UNUSED(nAddress)
+
+    return "";
 }

@@ -1,4 +1,4 @@
-/* Copyright (c) 2023-2025 hors<horsicq@gmail.com>
+/* Copyright (c) 2025 hors<horsicq@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,10 +27,18 @@ class XDecompiler : public QObject
 {
     Q_OBJECT
 public:
+    enum MODE {
+        MODE_UNKNOWN = 0,
+        MODE_ASMC_PSEUDOCODE,
+    };
+
     explicit XDecompiler(QObject *pParent = nullptr);
+    void setData(XInfoDB *pXInfoDB, QString sProfile);
+    QString decompileFunction(XADDR nAddress);
 
-signals:
-
+private:
+    XInfoDB *g_pXInfoDB;
+    QString g_sProfile;
 };
 
 #endif // XDECOMPILER_H
