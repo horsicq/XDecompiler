@@ -26,7 +26,7 @@ XDecompiler::XDecompiler(QObject *pParent)
 
 }
 
-void XDecompiler::setData(XInfoDB *pXInfoDB, QString sProfile)
+void XDecompiler::setData(XInfoDB *pXInfoDB, const QString &sProfile)
 {
     g_pXInfoDB = pXInfoDB;
     g_sProfile = sProfile;

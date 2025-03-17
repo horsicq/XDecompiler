@@ -33,7 +33,7 @@ public:
     };
 
     explicit XDecompiler(QObject *pParent = nullptr);
-    void setData(XInfoDB *pXInfoDB, QString sProfile);
+    void setData(XInfoDB *pXInfoDB, const QString &sProfile);
     QString decompileFunction(XADDR nAddress);
 
 private:
