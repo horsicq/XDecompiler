@@ -37,8 +37,8 @@ public:
     QString decompileFunction(XADDR nAddress);
 
 private:
-    XInfoDB *g_pXInfoDB;
-    QString g_sProfile;
+    XInfoDB *m_pXInfoDB;
+    QString m_sProfile;
 };
 
 #endif // XDECOMPILER_H

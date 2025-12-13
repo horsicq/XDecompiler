@@ -28,8 +28,8 @@ XDecompiler::XDecompiler(QObject *pParent)
 
 void XDecompiler::setData(XInfoDB *pXInfoDB, const QString &sProfile)
 {
-    g_pXInfoDB = pXInfoDB;
-    g_sProfile = sProfile;
+    m_pXInfoDB = pXInfoDB;
+    m_sProfile = sProfile;
 }
 
 QString XDecompiler::decompileFunction(XADDR nAddress)
