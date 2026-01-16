@@ -52,7 +52,7 @@ void XX86Parser::handleCode(XInfoDB::STATE *pState, XBinary::_MEMORY_RECORD *pMe
 
         qint32 nRefDataSize = 0;
 
-        if (pState->listRecords.count() >= 2000000) {
+        if (pState->listRecords.count() >= 10000000) {
             break;
         }
 
