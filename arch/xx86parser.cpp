@@ -20,6 +20,8 @@
  */
 #include "xx86parser.h"
 
+#include <algorithm>
+
 XX86Parser::XX86Parser(QObject *pParent) : XAbstractParser(pParent)
 {
 }
@@ -31,10 +33,15 @@ XX86Parser::~XX86Parser()
 void XX86Parser::handleCode(XInfoDB::STATE *pState, XBinary::_MEMORY_RECORD *pMemoryRecord, char *pMemory, XADDR nRelOffset, qint64 nSize, quint16 nBranch,
                             XBinary::PDSTRUCT *pPdStruct)
 {
+    if ((pState == nullptr) || (pMemoryRecord == nullptr) || (pMemory == nullptr) || (nSize <= 0) || (pMemoryRecord->nSize <= 0) ||
+        (nRelOffset >= (XADDR)pMemoryRecord->nSize)) {
+        return;
+    }
+
     XDisasmAbstract::DISASM_OPTIONS disasmOptions = {};
     disasmOptions.bNoStrings = true;
 
-    qint64 nTotalSize = qMin((qint64)(pMemoryRecord->nSize - nRelOffset), (qint64)nSize);
+    qint64 nTotalSize = (std::min)(pMemoryRecord->nSize - (qint64)nRelOffset, nSize);
 
     qint32 _nFreeIndex = XBinary::getFreeIndex(pPdStruct);
     XBinary::setPdStructInit(pPdStruct, _nFreeIndex, nTotalSize);
@@ -52,7 +59,7 @@ void XX86Parser::handleCode(XInfoDB::STATE *pState, XBinary::_MEMORY_RECORD *pMe
 
         qint32 nRefDataSize = 0;
 
-        if (pState->listRecords.count() >= 10000000) {
+        if (pState->listRecords.size() >= 10000000) {
             break;
         }
 
