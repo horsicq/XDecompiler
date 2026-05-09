@@ -24,6 +24,3 @@ XAbstractParser::XAbstractParser(QObject *pParent) : QObject(pParent)
 {
 }
 
-XAbstractParser::~XAbstractParser()
-{
-}

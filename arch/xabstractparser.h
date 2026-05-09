@@ -29,7 +29,6 @@ class XAbstractParser : public QObject
 
 public:
     explicit XAbstractParser(QObject *pParent = nullptr);
-    virtual ~XAbstractParser();
 };
 
 #endif  // XABSTRACTPARSER_H

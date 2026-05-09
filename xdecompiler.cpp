@@ -36,5 +36,5 @@ QString XDecompiler::decompileFunction(XADDR nAddress)
 {
     Q_UNUSED(nAddress)
 
-    return "";
+    return {};
 }
