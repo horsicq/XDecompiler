@@ -23,8 +23,7 @@
 
 #include "xinfodb.h"
 
-class XAbstractParser : public QObject
-{
+class XAbstractParser : public QObject {
     Q_OBJECT
 
 public:

@@ -23,8 +23,7 @@
 
 #include "xabstractparser.h"
 
-class XX86Parser : public XAbstractParser
-{
+class XX86Parser : public XAbstractParser {
     Q_OBJECT
 
 public:

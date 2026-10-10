@@ -23,8 +23,7 @@
 
 #include "xinfodb.h"
 
-class XDecompiler : public QObject
-{
+class XDecompiler : public QObject {
     Q_OBJECT
 public:
     enum MODE {
@@ -41,4 +40,4 @@ private:
     QString m_sProfile;
 };
 
-#endif // XDECOMPILER_H
+#endif  // XDECOMPILER_H

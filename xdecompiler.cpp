@@ -20,10 +20,8 @@
  */
 #include "xdecompiler.h"
 
-XDecompiler::XDecompiler(QObject *pParent)
-    : QObject(pParent)
+XDecompiler::XDecompiler(QObject *pParent) : QObject(pParent)
 {
-
 }
 
 void XDecompiler::setData(XInfoDB *pXInfoDB, const QString &sProfile)
